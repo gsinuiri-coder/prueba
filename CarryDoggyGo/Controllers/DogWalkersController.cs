@@ -82,6 +82,7 @@ namespace CarryDoggyGo.Controllers
                 Description = model.Description,
                 PaymentAmount = model.PaymentAmount
             };
+
             _context.DogWalkers.Add(dogWalker);
             try
             {

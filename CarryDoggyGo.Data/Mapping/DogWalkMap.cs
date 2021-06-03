@@ -57,6 +57,11 @@ namespace CarryDoggyGo.Data.Mapping
                 .HasConstraintName("fk_dog_walk_dog_owner")
                 .IsRequired();
 
+            //one to one with qualification - by gsinuiri
+            builder.HasOne<Qualification>(s => s.Qualification)
+                .WithOne(ad => ad.DogWalk)
+                .HasForeignKey<Qualification>(ad => ad.DogWalkId);
+
             builder.Property(u => u.Date)
                 .HasColumnName("date")
                 .IsRequired();
